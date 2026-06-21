@@ -5,41 +5,48 @@
     font-family:'Poppins', sans-serif;
 }
 
-body{
+html, body{
+    height:auto;
     overflow-x:hidden;
     overflow-y:auto;
 }
 
 /* HERO */
 .hero{
+    position:relative;
     width:100%;
     min-height:100vh;
-    position:relative;
 }
 
-/* IMAGEN DE FONDO */
+/* FONDO */
 .hero img{
-    position:absolute;
-    inset:0;
+    position:fixed;
+    top:0;
+    left:0;
     width:100%;
     height:100%;
     object-fit:cover;
+    z-index:-2;
 }
 
 /* OSCURECIDO */
 .overlay{
-    position:absolute;
-    inset:0;
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
     background:rgba(0,0,0,.7);
+    z-index:-1;
 }
 
-/* CONTENIDO PRINCIPAL */
+/* CONTENIDO */
 .contenido{
     position:relative;
     z-index:10;
+
     width:90%;
     max-width:1200px;
-
     margin:0 auto;
 
     display:flex;
@@ -49,10 +56,10 @@ body{
 
     color:white;
 
-    padding:120px 0 60px; /* clave: evita que se corte arriba */
+    padding:140px 0 80px;
 }
 
-/* LINEA */
+/* DECORACIÓN */
 .linea{
     width:120px;
     height:4px;
@@ -100,22 +107,6 @@ h1{
     width:300px;
     padding:25px;
     border-radius:18px;
-
-    transition:.3s;
-}
-
-.card:hover{
-    transform:translateY(-5px);
-}
-
-.card span{
-    color:#ffd700;
-    font-size:.9rem;
-}
-
-.card h4{
-    margin-top:10px;
-    font-weight:500;
 }
 
 /* BOTÓN */
@@ -127,68 +118,21 @@ h1{
     color:black;
     text-decoration:none;
     font-weight:600;
-    transition:.3s;
 }
 
-.btn:hover{
-    transform:translateY(-4px) scale(1.03);
-}
-
-/* ===================== */
-/* 📱 RESPONSIVE */
-/* ===================== */
-
+/* RESPONSIVE */
 @media (max-width:768px){
-
-    .contenido{
-        padding:100px 15px 60px;
-    }
 
     h1{
         font-size:2.3rem;
-        line-height:1.2;
-    }
-
-    h3{
-        font-size:.9rem;
-        letter-spacing:2px;
-    }
-
-    .subtitulo{
-        font-size:1rem;
-        width:95%;
     }
 
     .info{
         flex-direction:column;
         align-items:center;
-        gap:15px;
     }
 
     .card{
         width:90%;
-        max-width:350px;
-    }
-
-    .btn{
-        width:100%;
-        max-width:280px;
-        text-align:center;
-    }
-}
-
-/* 📱 CELULARES PEQUEÑOS */
-@media (max-width:480px){
-
-    .contenido{
-        padding:110px 15px 60px;
-    }
-
-    h1{
-        font-size:2rem;
-    }
-
-    .subtitulo{
-        font-size:.95rem;
     }
 }
