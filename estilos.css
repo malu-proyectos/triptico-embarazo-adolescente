@@ -1,4 +1,3 @@
-
 *{
     margin:0;
     padding:0;
@@ -7,15 +6,17 @@
 }
 
 body{
-    overflow:hidden;
+    overflow-x:hidden;
 }
 
+/* HERO BASE */
 .hero{
     width:100%;
-    height:100vh;
+    min-height:100vh;
     position:relative;
 }
 
+/* IMAGEN */
 .hero img{
     position:absolute;
     top:0;
@@ -25,6 +26,7 @@ body{
     object-fit:cover;
 }
 
+/* OSCURECIDO */
 .overlay{
     position:absolute;
     top:0;
@@ -37,12 +39,13 @@ body{
     );
 }
 
+/* CONTENIDO */
 .contenido{
     position:relative;
     z-index:10;
     width:90%;
     max-width:1200px;
-    height:100%;
+    min-height:100vh;
     margin:auto;
 
     display:flex;
@@ -52,6 +55,8 @@ body{
 
     text-align:center;
     color:white;
+
+    padding:40px 0;
 }
 
 .linea{
@@ -83,9 +88,9 @@ h1{
     opacity:.9;
 }
 
+/* CARDS */
 .info{
     margin-top:50px;
-
     display:flex;
     gap:25px;
     flex-wrap:wrap;
@@ -95,12 +100,10 @@ h1{
 .card{
     background:rgba(255,255,255,.10);
     backdrop-filter:blur(8px);
-
     border:1px solid rgba(255,255,255,.20);
 
     width:300px;
     padding:25px;
-
     border-radius:18px;
 
     transition:.3s;
@@ -125,14 +128,12 @@ h1{
     text-decoration:none;
 
     padding:16px 45px;
-
     border-radius:50px;
 
     background:#ffd700;
     color:black;
 
     font-weight:600;
-
     transition:.3s;
 }
 
@@ -140,11 +141,11 @@ h1{
     transform:translateY(-4px) scale(1.03);
 }
 
-@media(max-width:768px){
+/* ===================== */
+/* 📱 ADAPTACIÓN CELULAR */
+/* ===================== */
 
-    body{
-        overflow:auto;
-    }
+@media (max-width: 768px){
 
     h1{
         font-size:2.5rem;
@@ -152,6 +153,7 @@ h1{
 
     h3{
         font-size:.9rem;
+        letter-spacing:2px;
     }
 
     .subtitulo{
@@ -159,13 +161,45 @@ h1{
         width:95%;
     }
 
+    .info{
+        flex-direction:column;
+        gap:15px;
+        align-items:center;
+    }
+
     .card{
-        width:100%;
+        width:90%;
         max-width:350px;
     }
 
     .btn{
         padding:14px 35px;
     }
+}
 
+/* 📱 CELULARES PEQUEÑOS */
+@media (max-width: 480px){
+
+    h1{
+        font-size:2rem;
+        line-height:1.2;
+    }
+
+    .subtitulo{
+        font-size:.95rem;
+    }
+
+    .contenido{
+        padding:60px 15px;
+    }
+
+    .linea{
+        width:90px;
+    }
+
+    .btn{
+        width:100%;
+        max-width:280px;
+        text-align:center;
+    }
 }
